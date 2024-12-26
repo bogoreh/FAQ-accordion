@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <title>FAQ Accordion Card</title>
+  </head>
+
+  <body class="web-body">
+    
+    <main class="outer-box">
+      <div class="box-1">
+        <div class="img-pattern"></div>
+        <div class="img-woman"></div>
+        <div class="img-box"></div>
+      </div>
+      <div class="box-2">
+        <h1 class="faq-h1">FAQ</h1>
+
+        <div class="details">
+          <div class="question-box">
+            <p class="question">How many team members can I invite?</p>
+            <img class="chevron" src="./images/icon-arrow-down.svg" alt="chevron-image"/>
+          </div>
+          <div class="content" tabindex="0">
+            <p class="content-p">You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.</p>
+          </div>
+        </div>
+
+        <div class="details">
+          <div class="question-box">
+            <p class="question">What is the maximum file upload size?</p>
+            <img class="chevron" src="./images/icon-arrow-down.svg" alt="chevron-image"/>
+          </div>
+          <div class="content" tabindex="0">
+            <p class="content-p">No more than 2GB. All files in your account must fit your allotted storage space.</p>
+          </div>
+        </div>
+
+        <div class="details">
+          <div class="question-box">
+            <p class="question">How do I reset my password?</p>
+            <img class="chevron" src="./images/icon-arrow-down.svg" alt="chevron-image"/>
+          </div>
+          <div class="content" tabindex="0">
+            <p class="content-p">Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you.</p>
+          </div>
+        </div>
+
+        <div class="details">
+          <div class="question-box">
+            <p class="question">Can I cancel my subscription?</p>
+            <img class="chevron" src="./images/icon-arrow-down.svg" alt="chevron-image"/>
+          </div>
+          <div class="content" tabindex="0">
+            <p class="content-p">Yes! Send us a message and we'll process your request no questions asked.</p>
+          </div>
+        </div>
+
+        <div class="details">
+          <div class="question-box">
+            <p class="question">Do you provide additional support?</p>
+            <img class="chevron" src="./images/icon-arrow-down.svg" alt="chevron-image"/>
+          </div>
+          <div class="content" tabindex="0">
+            <p class="content-p">Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      const detail = document.getElementsByClassName("details");
+      console.log(detail[0].classList)
+
+      for (var i = 0; i < detail.length; i++) {
+        detail[i].onclick = function() {
+          var setClasses = !this.classList.contains('active');
+          setClass(detail, 'active', 'remove');
+
+          if (setClasses) {
+            this.classList.toggle("active");
+          }
+        }
+      } 
+
+      function setClass(els, className, fnName) {
+          for (var i = 0; i < els.length; i++) {
+              els[i].classList[fnName](className);
+          }
+      }
+    </script>
+  </body>
+</html>
